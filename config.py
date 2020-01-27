@@ -9,6 +9,6 @@ class Config(object):
     FLASK_DEBUG = os.environ.get('FLASK_DEBUG')
 
     # Database
-    SQLALCHEMY_DATABASE_URI =  'mysql+pymysql://kaunda:kaunda@localhost:3307/smis'
+    SQLALCHEMY_DATABASE_URI =  'mysql+pymysql://kaunda:kaunda@localhost:3306/smis'
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS')
     SQLALCHEMY_TRACK_MODIFICATIONS = False

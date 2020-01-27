@@ -3,6 +3,7 @@ from app import app
 from flask import render_template, redirect, Blueprint
 from app.login.form import LoginForm
 import logging
+from flask_login import logout_user
 
 blue = Blueprint('', __name__, template_folder = 'templates')
 
@@ -66,3 +67,10 @@ def index():
                         , my_h1_title=my_h1_title
                         , user = user
                         , posts = posts, form = form)
+
+
+#user logout
+@blue.route('/logout', methods = ['GET', 'POST'])
+def logout():
+    logout_user()
+    return redirect(url_for('login.login'))
