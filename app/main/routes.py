@@ -1,6 +1,6 @@
 
 from app import app
-from flask import render_template, redirect, Blueprint
+from flask import render_template, redirect, Blueprint, url_for
 from app.login.form import LoginForm
 import logging
 from flask_login import logout_user

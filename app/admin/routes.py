@@ -5,4 +5,4 @@ blue = Blueprint('admin', __name__, template_folder='templates', url_prefix='/ad
 
 @blue.route('/')
 def admin():
-    return 'Admin dashboard'
+    return render_template('admin/index.html')
