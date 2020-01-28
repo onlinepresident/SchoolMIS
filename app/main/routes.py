@@ -62,16 +62,15 @@ def index():
 
     form = LoginForm()
     if form.validate_on_submit():
-        return redirect('/admin')
+        return redirect(url_for('admin.index'))#return redirect('/admin')
     return render_template('main/index.html'
                         , site_title = site_title
                         , my_h1_title=my_h1_title
                         , user = user
                         , posts = posts, form = form)
 
-
 #user logout
 @blue.route('/logout', methods = ['GET', 'POST'])
 def logout():
     logout_user()
-    return redirect(url_for('login.login'))
+    return redirect(url_for('login.index'))

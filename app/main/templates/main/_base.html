@@ -294,9 +294,10 @@ z-index: 5;
 
 <body>
   <div>
-      <a href="{{ url_for('login.login') }}">Home</a>
+
+      <a href="{{ url_for('.index') }}">Home</a>
       {% if current_user.is_anonymous %}
-      <a href="{{ url_for('login.login') }}">Login</a>
+      <a href="{{ url_for('login.index') }}">Login</a>
       {% else %}
       <a href="{{ url_for('.logout') }}">Logout</a>
       {% endif %}
