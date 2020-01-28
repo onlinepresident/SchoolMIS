@@ -16,6 +16,7 @@ def index():
 
     posts = [
             {
+
                 'author':{'username':'Kaunda'}
                 ,'title':'Post from Kaunda'
                 ,'body':'This is the content of Kaunda'

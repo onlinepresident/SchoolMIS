@@ -10,9 +10,11 @@ from flask_login import LoginManager
 
 app                 = Flask(__name__)
 app.config.from_object(Config)
-login_manager       = LoginManager(app)
 db                  = SQLAlchemy(app)
 migrate             = Migrate(app, db)
+login_manager       = LoginManager(app)
+login_manager.login_view = 'login'
+
 #toolban             = DebugToolbarExtension(app)
 
 #app.config['SECRET_KEY']='anything'

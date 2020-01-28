@@ -1,8 +1,9 @@
 from flask import Blueprint
-
+from flask_login import login_required
 blue = Blueprint('account', __name__, template_folder='templates', url_prefix='/account')
 
-@blue.route('')
+@blue.route('/')
+@login_required
 def accounts():
     return 'accounts information'
 
@@ -11,6 +12,6 @@ def payment():
     return 'payment information'
 
 
-@blue.route('receipt')
+@blue.route('/receipt')
 def receipt():
     return 'receipt information'

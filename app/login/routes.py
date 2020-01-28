@@ -2,6 +2,8 @@ from flask import Blueprint, render_template, redirect, flash, url_for
 from app.login.form import LoginForm
 from flask_login import current_user,login_user
 from app.main.models import User
+from flask import request
+from werkzeug.urls import url_parse
 
 blue = Blueprint('login',__name__, template_folder = 'templates', url_prefix='/login')
 
@@ -18,5 +20,12 @@ def login():
             return redirect(url_for('login.login'))
 
         login_user(user, remember = form.remember_me.data)
+
+        next_page = request.args.get('next')
+
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('login.login')
+        return redirect(next_page)
+
         return redirect(url_for('admin.admin'))
     return render_template('login/login.html', title = 'Sign In', form = form)
