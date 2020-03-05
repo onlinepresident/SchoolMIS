@@ -70,7 +70,7 @@ def index():
                         , posts = posts, form = form)
 
 #user logout
-@blue.route('/logout', methods = ['GET', 'POST'])
-def logout():
-    logout_user()
-    return redirect(url_for('login.index'))
+# @blue.route('/logout', methods = ['GET', 'POST'])
+# def logout():
+#     logout_user()
+#     return redirect(url_for('login.index'))

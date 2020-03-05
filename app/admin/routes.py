@@ -7,8 +7,8 @@ blue = Blueprint('admin', __name__, template_folder = 'templates', url_prefix='/
 @blue.route('/', methods = ['GET', 'POST'])
 @login_required
 def index():
-    return render_template('admin/index.html')
-    #return 'dashboard not working'
+    #return render_template('admin/index.html')
+    return 'dashboard not working'
 
 # @blue.route('/logout', methods = ['GET', 'POST'])
 # def logout():
